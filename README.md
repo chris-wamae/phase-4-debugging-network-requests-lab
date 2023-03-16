@@ -63,11 +63,25 @@ developing your own process.
 - Add a new toy when the toy form is submitted
 
   - How I debugged:
+  1. Checked console 
+  2. Checked toys_controller.rb create controller
+  3. Checked routes.rb
+  4. Checked network tab, found uninitialized constant error and fixed it
+  in toys_controller.rb
+
 
 - Update the number of likes for a toy
 
   - How I debugged:
+  1. Checked console - found unexpected end of JSON input error
+  - this means the server is not returning a json object for the route 
+  -added render json: line to the update controller method which fixed the bug
 
 - Donate a toy to Goodwill (and delete it from our database)
 
   - How I debugged:
+  1. Checked console - found Not found error
+  2. Checked network tab - found no matching route error
+  - this means the delete route is not added in routes.rb
+  - added destroy resource in routes.rb
+  
